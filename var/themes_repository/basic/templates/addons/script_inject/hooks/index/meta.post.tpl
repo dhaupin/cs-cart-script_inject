@@ -1,0 +1,1 @@
+{if $addons.script_inject.header_m_inject}{$addons.script_inject.header_m_inject nofilter}{/if}

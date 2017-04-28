@@ -1,0 +1,1 @@
+{if $addons.script_inject.body_inject}{$addons.script_inject.body_inject nofilter}{/if}

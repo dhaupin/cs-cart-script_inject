@@ -1,0 +1,1 @@
+{if $addons.script_inject.footer_inject}{$addons.script_inject.footer_inject nofilter}{/if}
