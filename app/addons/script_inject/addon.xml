@@ -1,1 +1,73 @@
-<?xml version="1.0"?><addon scheme="2.0" edition_type="ROOT,ULT:VENDOR">    <id>script_inject</id>    <version>1.1</version>	<default_language>en</default_language>	<name>Script Inject</name>	<description>An easy way to add global content, metas, styles, scripts, and more into your store(s) theme using head, body, and footer hooks.</description>    <priority>1000000</priority>    <position>0</position>	<status>active</status>    <default_language>en</default_language>    <authors>        <author>            <name>Dhaupin - CreadevDotOrg</name>            <email>dhaupin@creadev.org</email>            <url>https://creadev.org</url>        </author>    </authors>    <!--Prepend or append the common tab list with add-on tabs (default defined as append)-->    <tab_order>prepend</tab_order>    <settings layout="popup">        <sections>            <!-- @id - Registry::get('addons.addon_id.setting_id') -->            <section id="main">				<name>Global</name>                <items>                    <item id="header_m_inject">						<name><![CDATA[Head global meta inject<br />(index.meta.post)]]></name>						<tooltip><![CDATA[Puts meta information into the &lt;head&gt; section of your store(s). Note: You may need to surround certain metas or JSON-LD with {literal}{/literal} Smarty tags.]]></tooltip>                        <type>textarea</type>                    </item>                    <item id="header_c_inject">						<name><![CDATA[Head global style inject<br />(index.styles.post)]]></name>						<tooltip><![CDATA[Puts styles into the &lt;head&gt; section of your store(s). CS-Cart loops these into standalone.css.]]></tooltip>                        <type>textarea</type>                    </item>                    <item id="header_s_inject">						<name><![CDATA[Head global script inject<br />(index.head_scripts.post)]]></name>						<tooltip><![CDATA[Puts scripts into the &lt;head&gt; section of your store(s). Note: You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>                        <type>textarea</type>                    </item>                    <item id="body_inject">						<name><![CDATA[Body global inject<br />(index.content.pre)]]></name>                        <tooltip><![CDATA[Puts scripts or content just after the &lt;body&gt; tag of your store(s). Note: inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>						<type>textarea</type>                    </item>                    <item id="footer_inject">						<name><![CDATA[Footer global inject<br />(index.footer.post)]]></name>						<tooltip><![CDATA[Puts scripts or content into the footer of your store(s). Note: inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>                        <type>textarea</type>                    </item>					<item id="footer_s_inject">						<name><![CDATA[Footer global script inject<br />(index.scripts.post)]]></name>						<tooltip><![CDATA[Puts scripts into the footer of your store(s). Note: You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>                        <type>textarea</type>                    </item>                </items>            </section>            <section id="checkout">				<name>Checkout</name>                <items>                    <item id="success_inject">						<name><![CDATA[Order success footer inject<br />()]]></name>						<tooltip><![CDATA[Puts scripts into the order complete of your store(s). Note:  inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>                        <type>textarea</type>                    </item>                </items>            </section>        </sections>    </settings></addon>
+<?xml version="1.0"?>
+<addon scheme="2.0" edition_type="ROOT,ULT:VENDOR">
+	<id>script_inject</id>
+	<version>1.1.0</version>
+	<name>Script Inject</name>
+	<description>An easy way to add global content, metas, styles, scripts, and more into your store(s) theme using head, body, and footer hooks.</description>
+	<priority>1000000</priority>
+	<position>0</position>
+	<status>active</status>
+	<default_language>en</default_language>
+	<compatibility>
+		<core_version>
+			<min>4.3.4</min>
+			<!-- Untested below v4.3.4 -->
+		</core_version>
+	</compatibility>
+	<authors>
+		<author>
+			<name>Dhaupin - CreadevDotOrg</name>
+			<email>dhaupin@creadev.org</email>
+			<url>https://creadev.org</url>
+		</author>
+	</authors>
+	<settings layout="popup">
+		<sections>
+			<section id="main">
+				<name>Global</name>
+				<items>
+					<item id="header_m_inject">
+						<name><![CDATA[Head global meta inject<br />(index.meta.post)]]></name>
+						<tooltip><![CDATA[Puts meta information into the &lt;head&gt; section of your store(s). Note: You may need to surround certain metas or JSON-LD with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+					<item id="header_c_inject">
+						<name><![CDATA[Head global style inject<br />(index.styles.post)]]></name>
+						<tooltip><![CDATA[Puts styles into the &lt;head&gt; section of your store(s). CS-Cart loops these into standalone.css.]]></tooltip>
+						<type>textarea</type>
+					</item>
+					<item id="header_s_inject">
+						<name><![CDATA[Head global script inject<br />(index.head_scripts.post)]]></name>
+						<tooltip><![CDATA[Puts scripts into the &lt;head&gt; section of your store(s). Note: You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+					<item id="body_inject">
+						<name><![CDATA[Body global inject<br />(index.content.pre)]]></name>
+						<tooltip><![CDATA[Puts scripts or content just after the &lt;body&gt; tag of your store(s). Note: inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+					<item id="footer_inject">
+						<name><![CDATA[Footer global inject<br />(index.footer.post)]]></name>
+						<tooltip><![CDATA[Puts scripts or content into the footer of your store(s). Note: inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+					<item id="footer_s_inject">
+						<name><![CDATA[Footer global script inject<br />(index.scripts.post)]]></name>
+						<tooltip><![CDATA[Puts scripts into the footer of your store(s). Note: You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+				</items>
+			</section>
+			<section id="checkout">
+				<name>Checkout</name>
+				<items>
+					<item id="success_inject">
+						<name><![CDATA[Order success footer inject<br />()]]></name>
+						<tooltip><![CDATA[Puts scripts into the order complete of your store(s). Note:  inline scripts may be moved to the footer automagically unless you include data-no-defer attrib. You may need to surround your script(s) with {literal}{/literal} Smarty tags.]]></tooltip>
+						<type>textarea</type>
+					</item>
+				</items>
+			</section>
+		</sections>
+	</settings>
+</addon>
