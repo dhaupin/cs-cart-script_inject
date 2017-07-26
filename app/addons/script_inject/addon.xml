@@ -23,8 +23,8 @@
 	</authors>
 	<settings layout="popup">
 		<sections>
-			<section id="main">
-				<name>Global</name>
+			<section id="general">
+				<name>General</name>
 				<items>
 					<item id="header_m_inject">
 						<name><![CDATA[Head global meta inject<br />(index.meta.post)]]></name>
